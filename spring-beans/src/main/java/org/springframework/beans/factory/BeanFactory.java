@@ -23,7 +23,7 @@ import org.springframework.lang.Nullable;
 /**
  * The root interface for accessing a Spring bean container（访问Spring bean的根接口）.
  *
- * <p>This is the basic client view of a bean container;
+ * <p>This is the basic client view of a bean container（这是bean容器的基本客户端视图）;
  * further interfaces such as {@link ListableBeanFactory} and
  * {@link org.springframework.beans.factory.config.ConfigurableBeanFactory}
  * are available for specific purposes.
@@ -31,16 +31,16 @@ import org.springframework.lang.Nullable;
  * <p>This interface is implemented by objects that hold a number of（大量的，许多） bean definitions,
  * each uniquely（独特的） identified by a String name. Depending on the bean definition,
  * the factory will return either an independent instance of a contained object
- * (the Prototype design pattern), or a single shared instance (a superior（更大的，更强的）  @csy pause
+ * (the Prototype design pattern), or a single shared instance (a superior（更大的，更强的）
  * alternative to the Singleton design pattern, in which the instance is a
  * singleton in the scope of the factory). Which type of instance will be returned
  * depends on the bean factory configuration: the API is the same. Since Spring
- * 2.0, further scopes are available depending on the concrete application
+ * 2.0, further scopes are available depending on the concrete application（具体应用）
  * context (e.g. "request" and "session" scopes in a web environment).
  *
- * <p>The point of this approach is that the BeanFactory is a central registry
- * of application components, and centralizes configuration of application
- * components (no more do individual objects need to read properties files,
+ * <p>The point of this approach（靠近） is that the BeanFactory is a central registry
+ * of application components, and centralizes configuration（集中配置） of application
+ * components (no more（不再） do individual objects（个别的） need to read properties files, todo @pause
  * for example). See chapters 4 and 11 of "Expert One-on-One J2EE Design and
  * Development" for a discussion of the benefits of this approach.
  *
