@@ -25,12 +25,12 @@ import java.lang.annotation.Target;
 import org.springframework.core.annotation.AliasFor;
 
 /**
- * Indicates that an annotated class is a "Repository", originally defined by
- * Domain-Driven Design (Evans, 2003) as "a mechanism for encapsulating storage,
- * retrieval, and search behavior which emulates a collection of objects".
+ * Indicates that an annotated class is a "Repository"（仓库）, originally defined by
+ * Domain-Driven Design 领域驱动设计 (Evans, 2003) as "a mechanism for encapsulating storage,
+ * retrieval（检索）, and search behavior which emulates a collection of objects".（仓库对象处理：对一组对象中进行存储、检索、搜索）
  *
  * <p>Teams implementing traditional Jakarta EE patterns such as "Data Access Object"
- * may also apply this stereotype to DAO classes, though care should be taken to
+ * may also apply this stereotype to DAO classes, （也可以将这种数据模型应用于DAO类）though care should be taken to
  * understand the distinction between Data Access Object and DDD-style repositories
  * before doing so. This annotation is a general-purpose stereotype and individual teams
  * may narrow their semantics and use as appropriate.
@@ -62,11 +62,11 @@ import org.springframework.core.annotation.AliasFor;
 public @interface Repository {
 
 	/**
-	 * The value may indicate a suggestion for a logical component name,
+	 * The value may indicate a suggestion for a logical component name（逻辑上的组件名称）,
 	 * to be turned into a Spring bean in case of an autodetected component.
 	 * @return the suggested component name, if any (or empty String otherwise)
 	 */
 	@AliasFor(annotation = Component.class)
-	String value() default "";
+	String value() default ""; //value：可设值仓库的名称
 
 }

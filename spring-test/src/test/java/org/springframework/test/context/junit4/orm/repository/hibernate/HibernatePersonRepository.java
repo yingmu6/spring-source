@@ -30,9 +30,9 @@ import org.springframework.test.context.junit4.orm.repository.PersonRepository;
  * @since 3.0
  */
 @Repository
-public class HibernatePersonRepository implements PersonRepository {
+public class HibernatePersonRepository implements PersonRepository { //Hibernate方式实现的仓库
 
-	private final SessionFactory sessionFactory;
+	private final SessionFactory sessionFactory; //hibernate的会话管理工厂
 
 
 	@Autowired

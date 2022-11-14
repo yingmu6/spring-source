@@ -25,6 +25,7 @@ import org.springframework.util.Assert;
 
 /**
  * Simple ClassFilter that looks for a specific annotation being present on a class.
+ * （查找出现在类上的特定注释的简单ClassFilter）
  *
  * @author Juergen Hoeller
  * @since 2.0

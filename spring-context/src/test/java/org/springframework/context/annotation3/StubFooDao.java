@@ -24,7 +24,7 @@ import org.springframework.stereotype.Repository;
 /**
  * @author Mark Fisher
  */
-@Repository
+@Repository  //ø…–ﬁ ŒDAO¿‡
 @Qualifier("testing")
 public class StubFooDao implements FooDao {
 

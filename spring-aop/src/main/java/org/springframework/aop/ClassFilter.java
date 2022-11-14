@@ -33,7 +33,7 @@ package org.springframework.aop;
  * @see MethodMatcher
  */
 @FunctionalInterface
-public interface ClassFilter {
+public interface ClassFilter { //Àà¹ıÂËÆ÷
 
 	/**
 	 * Should the pointcut apply to the given interface or target class?
