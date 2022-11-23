@@ -40,11 +40,11 @@ import org.springframework.lang.Nullable;
  *
  * <p>The point of this approach（靠近） is that the BeanFactory is a central registry
  * of application components, and centralizes configuration（集中配置） of application
- * components (no more（不再） do individual objects（个别的） need to read properties files, todo @pause
+ * components (no more（不再） do individual objects（个别的） need to read properties files,
  * for example). See chapters 4 and 11 of "Expert One-on-One J2EE Design and
  * Development" for a discussion of the benefits of this approach.
  *
- * <p>Note that it is generally better to rely on Dependency Injection
+ * <p>Note that it is generally better to rely on Dependency Injection（依赖注入）
  * ("push" configuration) to configure application objects through setters
  * or constructors, rather than use any form of "pull" configuration like a
  * BeanFactory lookup. Spring's Dependency Injection functionality is
@@ -58,14 +58,14 @@ import org.springframework.lang.Nullable;
  * properties file, etc. Implementations are encouraged to support references
  * amongst beans (Dependency Injection).
  *
- * <p>In contrast to the methods in {@link ListableBeanFactory}, all of the
+ * <p>In contrast（差异） to the methods in {@link ListableBeanFactory}, all of the
  * operations in this interface will also check parent factories if this is a
  * {@link HierarchicalBeanFactory}. If a bean is not found in this factory instance,
  * the immediate parent factory will be asked. Beans in this factory instance
  * are supposed to override beans of the same name in any parent factory.
  *
- * <p>Bean factory implementations should support the standard bean lifecycle interfaces
- * as far as possible. The full set of initialization methods and their standard order is:
+ * <p>Bean factory implementations should support the standard bean lifecycle interfaces （Bean工厂的实现类，应该支持标准的bean生命周期）
+ * as far as possible. The full set of initialization（初始化） methods and their standard order is:
  * <ol>
  * <li>BeanNameAware's {@code setBeanName}
  * <li>BeanClassLoaderAware's {@code setBeanClassLoader}
@@ -120,7 +120,7 @@ import org.springframework.lang.Nullable;
 public interface BeanFactory {
 
 	/**
-	 * Used to dereference a {@link FactoryBean} instance and distinguish it from
+	 * Used to dereference（解除引用） a {@link FactoryBean} instance and distinguish（区分） it from
 	 * beans <i>created</i> by the FactoryBean. For example, if the bean named
 	 * {@code myJndiObject} is a FactoryBean, getting {@code &myJndiObject}
 	 * will return the factory, not the instance returned by the factory.
@@ -129,18 +129,18 @@ public interface BeanFactory {
 
 
 	/**
-	 * Return an instance, which may be shared or independent, of the specified bean.
+	 * Return an instance, which may be shared（共享的） or independent（独立的）, of the specified bean（特定的bean）.
 	 * <p>This method allows a Spring BeanFactory to be used as a replacement for the
-	 * Singleton or Prototype design pattern. Callers may retain references to
+	 * Singleton or Prototype design pattern. Callers may retain（保留） references to
 	 * returned objects in the case of Singleton beans.
-	 * <p>Translates aliases back to the corresponding canonical bean name.
+	 * <p>Translates aliases back to the corresponding（相似的） canonical（规范） bean name.
 	 * <p>Will ask the parent factory if the bean cannot be found in this factory instance.
-	 * @param name the name of the bean to retrieve
+	 * @param name the name of the bean to retrieve （bean的检索名称）
 	 * @return an instance of the bean
 	 * @throws NoSuchBeanDefinitionException if there is no bean with the specified name
 	 * @throws BeansException if the bean could not be obtained
 	 */
-	Object getBean(String name) throws BeansException;
+	Object getBean(String name) throws BeansException; //根据bean的名称，获取对应的bean的实例
 
 	/**
 	 * Return an instance, which may be shared or independent, of the specified bean.
@@ -151,13 +151,13 @@ public interface BeanFactory {
 	 * <p>Translates aliases back to the corresponding canonical bean name.
 	 * <p>Will ask the parent factory if the bean cannot be found in this factory instance.
 	 * @param name the name of the bean to retrieve
-	 * @param requiredType type the bean must match; can be an interface or superclass
+	 * @param requiredType type the bean must match（类型必须匹配）; can be an interface or superclass
 	 * @return an instance of the bean
 	 * @throws NoSuchBeanDefinitionException if there is no such bean definition
 	 * @throws BeanNotOfRequiredTypeException if the bean is not of the required type
 	 * @throws BeansException if the bean could not be created
 	 */
-	<T> T getBean(String name, Class<T> requiredType) throws BeansException;
+	<T> T getBean(String name, Class<T> requiredType) throws BeansException; //按照bean名称以及类型查找bean实例
 
 	/**
 	 * Return an instance, which may be shared or independent, of the specified bean.
