@@ -161,9 +161,9 @@ public interface BeanFactory {
 
 	/**
 	 * Return an instance, which may be shared or independent, of the specified bean.
-	 * <p>Allows for specifying explicit constructor arguments / factory method arguments,
+	 * <p>Allows for specifying explicit constructor arguments / factory method arguments, （可以显示的指定构造方法的参数）
 	 * overriding the specified default arguments (if any) in the bean definition.
-	 * @param name the name of the bean to retrieve
+	 * @param name the name of the bean to retrieve（检索）
 	 * @param args arguments to use when creating a bean instance using explicit arguments
 	 * (only applied when creating a new instance as opposed to retrieving an existing one)
 	 * @return an instance of the bean
@@ -173,7 +173,7 @@ public interface BeanFactory {
 	 * @throws BeansException if the bean could not be created
 	 * @since 2.5
 	 */
-	Object getBean(String name, Object... args) throws BeansException;
+	Object getBean(String name, Object... args) throws BeansException; //按类型获取到bean
 
 	/**
 	 * Return the bean instance that uniquely matches the given object type, if any.
@@ -260,7 +260,7 @@ public interface BeanFactory {
 	 * @param name the name of the bean to query
 	 * @return whether a bean with the given name is present
 	 */
-	boolean containsBean(String name);
+	boolean containsBean(String name); //是否包含指定名称的bean实例
 
 	/**
 	 * Is this bean a shared singleton? That is, will {@link #getBean} always
@@ -280,7 +280,7 @@ public interface BeanFactory {
 	boolean isSingleton(String name) throws NoSuchBeanDefinitionException;
 
 	/**
-	 * Is this bean a prototype? That is, will {@link #getBean} always return
+	 * Is this bean a prototype（原型）? That is, will {@link #getBean} always return
 	 * independent instances?
 	 * <p>Note: This method returning {@code false} does not clearly indicate
 	 * a singleton object. It indicates non-independent instances, which may correspond
@@ -347,7 +347,7 @@ public interface BeanFactory {
 	 * @see #isTypeMatch
 	 */
 	@Nullable
-	Class<?> getType(String name) throws NoSuchBeanDefinitionException;
+	Class<?> getType(String name) throws NoSuchBeanDefinitionException; //返回指定名称的bean实例对应的类型
 
 	/**
 	 * Determine the type of the bean with the given name. More specifically,
@@ -356,7 +356,7 @@ public interface BeanFactory {
 	 * as exposed by {@link FactoryBean#getObjectType()}. Depending on the
 	 * {@code allowFactoryBeanInit} flag, this may lead to the initialization of a previously
 	 * uninitialized {@code FactoryBean} if no early type information is available.
-	 * <p>Translates aliases back to the corresponding canonical bean name.
+	 * <p>Translates aliases back to the corresponding canonical bean name（对应的规范的bean名称）.
 	 * <p>Will ask the parent factory if the bean cannot be found in this factory instance.
 	 * @param name the name of the bean to query
 	 * @param allowFactoryBeanInit whether a {@code FactoryBean} may get initialized

@@ -25,10 +25,10 @@ import org.springframework.beans.BeansException;
 import org.springframework.lang.Nullable;
 
 /**
- * A variant of {@link ObjectFactory} designed specifically for injection points,
+ * A variant of {@link ObjectFactory}（ObjectFactory的变种） designed specifically for injection points（为注入点设计）,
  * allowing for programmatic optionality and lenient not-unique handling.
  *
- * <p>As of 5.1, this interface extends {@link Iterable} and provides {@link Stream}
+ * <p>As of 5.1, this interface extends {@link Iterable} and provides {@link Stream}  （继承了Iterable，可以在for循环中便利）
  * support. It can be therefore be used in {@code for} loops, provides {@link #forEach}
  * iteration and allows for collection-style {@link #stream} access.
  *
@@ -50,7 +50,7 @@ public interface ObjectProvider<T> extends ObjectFactory<T>, Iterable<T> {
 	 * @throws BeansException in case of creation errors
 	 * @see #getObject()
 	 */
-	T getObject(Object... args) throws BeansException;
+	T getObject(Object... args) throws BeansException; //指定构造方法的参数，并返回对应的bean实例
 
 	/**
 	 * Return an instance (possibly shared or independent) of the object
@@ -145,7 +145,7 @@ public interface ObjectProvider<T> extends ObjectFactory<T>, Iterable<T> {
 	 * @see #stream()
 	 */
 	@Override
-	default Iterator<T> iterator() {
+	default Iterator<T> iterator() { //返回迭代器
 		return stream().iterator();
 	}
 
@@ -156,7 +156,7 @@ public interface ObjectProvider<T> extends ObjectFactory<T>, Iterable<T> {
 	 * @see #iterator()
 	 * @see #orderedStream()
 	 */
-	default Stream<T> stream() {
+	default Stream<T> stream() { //返回Stream对象，父类没有实现，需要子类去实现
 		throw new UnsupportedOperationException("Multi element access not supported");
 	}
 
