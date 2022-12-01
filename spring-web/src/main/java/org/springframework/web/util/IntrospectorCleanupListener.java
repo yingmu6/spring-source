@@ -24,9 +24,9 @@ import jakarta.servlet.ServletContextListener;
 import org.springframework.beans.CachedIntrospectionResults;
 
 /**
- * Listener that flushes the JDK's {@link java.beans.Introspector JavaBeans Introspector}
+ * Listener that flushes the JDK's {@link java.beans.Introspector JavaBeans Introspector （内省）}
  * cache on web app shutdown. Register this listener in your {@code web.xml} to
- * guarantee proper release of the web application class loader and its loaded classes.
+ * guarantee proper（正确的） release（）发布 of the web application class loader and its loaded classes.  //在web应用关闭时，刷新清除缓存，确保能正常发布应用
  *
  * <p><b>If the JavaBeans Introspector has been used to analyze application classes,
  * the system-level Introspector cache will hold a hard reference to those classes.
@@ -79,7 +79,7 @@ public class IntrospectorCleanupListener implements ServletContextListener {
 	@Override
 	public void contextDestroyed(ServletContextEvent event) {
 		CachedIntrospectionResults.clearClassLoader(Thread.currentThread().getContextClassLoader());
-		Introspector.flushCaches();
+		Introspector.flushCaches(); //刷新清除java 内省对象Introspector的缓存
 	}
 
 }

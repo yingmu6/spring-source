@@ -30,7 +30,7 @@ import org.springframework.lang.Nullable;
  *
  * <p>This interface is separate from {@link SchedulingTaskExecutor} since it
  * usually represents for a different kind of backend, i.e. a thread pool with
- * different characteristics and capabilities. Implementations may implement
+ * different characteristics（特征） and capabilities（能力）. Implementations may implement
  * both interfaces if they can handle both kinds of execution characteristics.
  *
  * <p>The 'default' implementation is

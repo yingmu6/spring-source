@@ -26,7 +26,7 @@ import org.springframework.beans.factory.support.AbstractBeanDefinition;
 import org.springframework.core.annotation.AliasFor;
 
 /**
- * Indicates that a method produces a bean to be managed by the Spring container.
+ * Indicates that a method produces a bean to be managed by the Spring container. （通过方法的形式，产生spring管理的bean）
  *
  * <h3>Overview</h3>
  *
@@ -36,7 +36,7 @@ import org.springframework.core.annotation.AliasFor;
  *
  * <pre class="code">
  *     &#064;Bean
- *     public MyBean myBean() {
+ *     public MyBean myBean() { //@Bean注解作用在方法上，返回值就作为Bean的类型
  *         // instantiate and configure MyBean obj
  *         return obj;
  *     }
@@ -212,7 +212,7 @@ import org.springframework.core.annotation.AliasFor;
  * @see org.springframework.beans.factory.annotation.Autowired
  * @see org.springframework.beans.factory.annotation.Value
  */
-@Target({ElementType.METHOD, ElementType.ANNOTATION_TYPE})
+@Target({ElementType.METHOD, ElementType.ANNOTATION_TYPE}) //作用在方法上、注解上
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
 public @interface Bean {

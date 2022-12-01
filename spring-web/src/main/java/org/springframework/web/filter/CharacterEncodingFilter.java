@@ -27,15 +27,15 @@ import org.springframework.lang.Nullable;
 import org.springframework.util.Assert;
 
 /**
- * Servlet Filter that allows one to specify a character encoding for requests.
- * This is useful because current browsers typically do not set a character
- * encoding even if specified in the HTML page or form.
+ * Servlet Filter that allows one to specify a character encoding for requests.（Servlet过滤器，允许为请求指定一个字符编码）
+ * This is useful because current browsers typically（通常） do not set a character
+ * encoding even if（即使） specified in the HTML page or form.（指定编码是有用的，因为浏览器一般不指定编码）
  *
  * <p>This filter can either apply its encoding if the request does not already
- * specify an encoding, or enforce this filter's encoding in any case
+ * specify an encoding, or enforce（强制） this filter's encoding in any case
  * ("forceEncoding"="true"). In the latter case, the encoding will also be
  * applied as default response encoding (although this will usually be overridden
- * by a full content type set in the view).
+ * by a full content type set in the view). （如果请求没有指定编码，会应用配置的编码，如果设置了forceEncoding=true，那么就强制使用服务端的编码）
  *
  * @author Juergen Hoeller
  * @since 15.03.2004
