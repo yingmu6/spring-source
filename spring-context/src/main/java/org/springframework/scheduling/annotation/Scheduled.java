@@ -120,9 +120,9 @@ public @interface Scheduled {
 	/**
 	 * Execute the annotated method with a fixed period between the end of the
 	 * last invocation and the start of the next.
-	 * <p>The time unit is milliseconds by default but can be overridden via
+	 * <p>The time unit is milliseconds by default but can be overridden via （以毫秒为单位的时间对应的字符串）
 	 * {@link #timeUnit}.
-	 * @return the delay as a String value &mdash; for example, a placeholder
+	 * @return the delay as a String value &mdash; for example, a placeholder（占位符）
 	 * or a {@link java.time.Duration#parse java.time.Duration} compliant value
 	 * @since 3.2.2
 	 */

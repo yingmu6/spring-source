@@ -30,7 +30,7 @@ import org.springframework.scheduling.config.ScheduledTaskRegistrar;
 
 /**
  * Enables Spring's scheduled task execution capability, similar to
- * functionality found in Spring's {@code <task:*>} XML namespace. To be used
+ * functionality found in Spring's {@code <task:*>} XML namespace. To be used （使用注解方式启动spring的定时任务，可替换XML方式的定义<task:scheduler>）
  * on {@link Configuration @Configuration} classes as follows:
  *
  * <pre class="code">
@@ -157,8 +157,8 @@ import org.springframework.scheduling.config.ScheduledTaskRegistrar;
  *     }
  * }</pre>
  *
- * <p>For reference, the example above can be compared to the following Spring XML
- * configuration:
+ * <p>For reference（作为参考）, the example above can be compared to the following Spring XML
+ * configuration: （可以用上面注解的方式与下面XML的方式进行对比）
  *
  * <pre class="code">
  * &lt;beans&gt;

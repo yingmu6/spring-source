@@ -61,7 +61,7 @@ import org.springframework.util.concurrent.ListenableFutureTask;
  */
 @SuppressWarnings({"serial", "deprecation"})
 public class ThreadPoolTaskScheduler extends ExecutorConfigurationSupport
-		implements AsyncListenableTaskExecutor, SchedulingTaskExecutor, TaskScheduler {
+		implements AsyncListenableTaskExecutor, SchedulingTaskExecutor, TaskScheduler { //线程池任务调度器
 
 	private volatile int poolSize = 1;
 

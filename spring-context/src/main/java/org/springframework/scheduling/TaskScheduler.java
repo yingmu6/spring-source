@@ -25,13 +25,13 @@ import java.util.concurrent.ScheduledFuture;
 import org.springframework.lang.Nullable;
 
 /**
- * Task scheduler interface that abstracts the scheduling of
- * {@link Runnable Runnables} based on different kinds of triggers.
+ * Task scheduler interface（任务调度接口） that abstracts the scheduling of
+ * {@link Runnable Runnables} based on different kinds of triggers.（基于不同的触发器，抽象了Runnable调度方式）
  *
  * <p>This interface is separate from {@link SchedulingTaskExecutor} since it
  * usually represents for a different kind of backend, i.e. a thread pool with
  * different characteristics（特征） and capabilities（能力）. Implementations may implement
- * both interfaces if they can handle both kinds of execution characteristics.
+ * both interfaces if they can handle both kinds of execution characteristics. （TaskScheduler与SchedulingTaskExecutor两个接口是分开的，代表不同的特征和能力，如果需要两者的特性，就实现两个接口）
  *
  * <p>The 'default' implementation is
  * {@link org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler},

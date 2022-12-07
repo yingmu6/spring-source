@@ -17,15 +17,16 @@
 package org.springframework.core.task;
 
 /**
- * A callback interface for a decorator to be applied to any {@link Runnable}
+ * A callback interface for a decorator（装饰器的回调接口） to be applied to any {@link Runnable}
  * about to be executed.
  *
- * <p>Note that such a decorator is not necessarily being applied to the
+ * <p>Note that such a decorator is not necessarily（不是必要的） being applied to the
  * user-supplied {@code Runnable}/{@code Callable} but rather to the actual
  * execution callback (which may be a wrapper around the user-supplied task).
  *
  * <p>The primary use case is to set some execution context around the task's
  * invocation, or to provide some monitoring/statistics for task execution.
+ * （主要用于设置任务调用的上下文信息，或者为任务提供监控和统计）
  *
  * <p><b>NOTE:</b> Exception handling in {@code TaskDecorator} implementations
  * may be limited. Specifically in case of a {@code Future}-based operation,
@@ -39,15 +40,15 @@ package org.springframework.core.task;
  * @see org.springframework.core.task.support.TaskExecutorAdapter#setTaskDecorator
  */
 @FunctionalInterface
-public interface TaskDecorator {
+public interface TaskDecorator { //任务的装饰器
 
 	/**
-	 * Decorate the given {@code Runnable}, returning a potentially wrapped
-	 * {@code Runnable} for actual execution, internally delegating to the
+	 * Decorate the given {@code Runnable}, returning a potentially（潜在地） wrapped
+	 * {@code Runnable} for actual execution, internally delegating（授权、委派） to the
 	 * original {@link Runnable#run()} implementation.
 	 * @param runnable the original {@code Runnable}
 	 * @return the decorated {@code Runnable}
 	 */
-	Runnable decorate(Runnable runnable);
+	Runnable decorate(Runnable runnable); //对给定的线程进行装饰，decorate: 装饰
 
 }
